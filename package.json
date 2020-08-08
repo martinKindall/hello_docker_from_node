@@ -1,0 +1,14 @@
+{
+  "name": "express_app_container",
+  "version": "1.0.0",
+  "description": "Just learning how to containerize an express app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
