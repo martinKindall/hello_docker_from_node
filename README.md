@@ -46,3 +46,11 @@ We can check our container was created and running with this command:
 ```
 docker container ls
 ```
+
+Finally, just go to [localhost](127.0.0.1) and check that the web page is displaying =).
+
+In order to stop the container, just run 
+
+```
+docker container stop some_container
+```
