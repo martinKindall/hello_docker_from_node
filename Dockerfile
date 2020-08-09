@@ -1,9 +1,6 @@
-FROM ubuntu
+FROM node:latest
 
 LABEL maintainer="mart256@gmail.com"
-
-RUN apt update
-RUN apt install nodejs npm
 
 COPY . /src
 
