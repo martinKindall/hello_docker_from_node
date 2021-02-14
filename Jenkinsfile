@@ -16,7 +16,7 @@ pipeline {
                     pwd
                     ls -a
                 '''
-                sh 'bash deploy_test.bash'
+                sh 'sh deploy_test.sh'
             }
         }
     }
