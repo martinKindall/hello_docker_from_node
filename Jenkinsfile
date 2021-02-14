@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'curlimages/curl:7.75.0'} }
+    agent any
     stages {
         stage('build') {
             steps {
@@ -14,7 +14,7 @@ pipeline {
                     pwd
                     ls -a
                 '''
-                sh 'sh /var/jenkins_home/workspace/node-pipeline_jenkins_tests/deploy_test.sh'
+                sh 'sh ./deploy_test.sh'
             }
         }
     }
