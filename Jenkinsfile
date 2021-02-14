@@ -12,6 +12,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
+                sh 'pwd'
                 sh './deploy_test.bash'
             }
         }
