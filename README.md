@@ -9,7 +9,7 @@ First we create an express app that just serves a static web page in html.
 Then we create a _Dockerfile_, which is the configuration file for building docker images. Thus, in this file we have to instruct the image every step it needs to execute in order to run this app. The steps are:
 
 - Mention the base layer (OS) on which our app is going to run. In this case, the image is called __node__, which is an [official image](https://hub.docker.com/_/node/) from Docker Hub, based on Debian. There are other lightweight layers based on Alpine Linux.
-- Copy all the files at the root of the proyect and put them into a /src folder.
+- Copy all the files at the root of the proyect and put them into a /src folder inside the container.
 - Establish the /src as the root directory.
 - Install npm dependencies.
 - Expose the port where the app is listening (3000).
