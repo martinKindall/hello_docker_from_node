@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Multiline steps work too"
-ö                '''
+                '''
             }
         }
         stage('deploy') {
