@@ -16,8 +16,8 @@ pipeline {
                     pwd
                     ls -a
                 '''
-                sh '''#!/bin/bash
-                    sh /var/jenkins_home/workspace/node-pipeline_jenkins_tests/deploy_test.bash
+                sh '''
+                    ./deploy_test.sh
                 '''
             }
         }
