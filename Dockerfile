@@ -6,6 +6,7 @@ COPY . /src
 
 WORKDIR /src
 
+RUN apk --no-cache add curl
 RUN npm install
 
 EXPOSE 3000

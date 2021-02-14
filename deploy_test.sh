@@ -11,4 +11,4 @@ assertCurl() {
   fi
 }
 
-assertCurl 200 "/usr/bin/curl --write-out "%{http_code}\n" --silent --output /dev/null "www.google.com""
+assertCurl 200 "curl --write-out "%{http_code}\n" --silent --output /dev/null "www.google.com""
