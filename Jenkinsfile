@@ -1,9 +1,8 @@
 pipeline {
-    agent { dockerfile true }
+    agent { docker { image 'curlimages/curl:7.75.0'} }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
                 sh '''
                     echo "Multiline steps work too"
                     whoami
