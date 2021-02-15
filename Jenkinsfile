@@ -1,10 +1,16 @@
 pipeline {
     agent any
+
+    environment {
+        SOME_VARIABLE = 'some_important_url'
+    }
+
     stages {
         stage('build') {
             steps {
                 sh '''
                     echo "Multiline steps work too"
+                    echo "The url is ${SOME_VARIABLE}"
                 '''
             }
         }
