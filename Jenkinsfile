@@ -6,6 +6,7 @@ pipeline {
         registry = 'mart256/learning-jenkins'
         registryCredential = 'dockerhub'
         dockerImage = ''
+        dockerImageName = ''
     }
 
     stages {
@@ -14,6 +15,7 @@ pipeline {
                 sh '''
                     echo "Multiline steps work too"
                     echo "The url is ${SOME_VARIABLE}"
+                    echo "The branch is ${GIT_BRANCH}"
                 '''
             }
         }
@@ -31,10 +33,16 @@ pipeline {
                 git 'https://github.com/martinKindall/hello_docker_from_node.git'
             }
         }
-        stage('build docker image') {
-            steps{
+        stage('Build image') {
+            steps {
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    if (env.BRANCH_NAME != 'master') {
+                        dockerImageName = registry + ":$GIT_BRANCH"
+                    } else {
+                        dockerImageName = registry + ":$BUILD_NUMBER"
+                    }
+
+                    dockerImage = docker.build dockerImageName
                 }
             }
         }
@@ -49,7 +57,7 @@ pipeline {
         }
         stage('Remove Unused docker image') {
             steps{
-                sh "docker rmi $registry:$BUILD_NUMBER"
+                sh "docker rmi $dockerImageName"
             }
         }
     }
