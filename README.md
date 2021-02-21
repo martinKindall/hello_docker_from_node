@@ -54,3 +54,7 @@ In order to stop the container, just run
 ```
 docker container stop some_container
 ```
+
+## Jenkinsfile
+
+A Jenkinsfile was added in order to do automatic image builds and push them to the docker registry.
