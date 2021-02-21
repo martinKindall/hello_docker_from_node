@@ -28,11 +28,6 @@ pipeline {
                 sh 'sh ./deploy_test.sh'
             }
         }
-        stage('Cloning Git') {
-            steps {
-                git 'https://github.com/martinKindall/hello_docker_from_node.git'
-            }
-        }
         stage('Build image') {
             steps {
                 script {
